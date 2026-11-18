@@ -8,6 +8,8 @@ INSTALLAZIONE E AVVIO:
 4) Aprire phpMyAdmin e importare il file "biblioteca.sql".
 5) Verificare i parametri di connessione al database nel file biblioteca/api/connessione.php.
 6) Aprire il browser e accedere all'indirizzo http://localhost/biblioteca/.
+7) Accedere all'area lettore con email:"mariorossi@example.it" password:"Biblioteca02".
+8) Accedere all'area bibliotecario con email:"annabianchi@example.com" password:"Biblioteca2026!".
 
 DOCUMENTAZIONE DELLE API:
 Nella piattaforma sviluppata, JavaScript utilizza la funzione fetch() per inviare richieste HTTP agli script PHP del back-end. La comunicazione avviene attraverso le API (Application Programming Interface), che permettono al front-end di richiedere informazioni o inviare dati da elaborare. Il back-end gestisce le richieste ricevute e, quando necessario, comunica con il database.
