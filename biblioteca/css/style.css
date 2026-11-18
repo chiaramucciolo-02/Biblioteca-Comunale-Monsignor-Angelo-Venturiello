@@ -1,0 +1,1330 @@
+/* 1. IMPOSTAZIONI GENERALI */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #faf6ef;
+    color: #333333;
+}
+/* 2. INTESTAZIONE E NAVIGAZIONE */
+/* Intestazione delle pagine */
+header {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+}
+header h1 {
+    color: #711528;
+    font-size: 42px;
+    margin: 0 0 20px;
+}
+nav a {
+    display: inline-block;
+    color: #333333;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 15px;
+    padding-bottom: 8px;
+}
+nav a:hover {
+    color: #711528;
+}
+nav a.attivo {
+    color: #711528;
+    border-bottom: 3px solid #711528;
+}
+/* 2.1 INTESTAZIONE DELLA BIBLIOTECA */
+.intestazione-biblioteca {
+    display: grid;
+    grid-template-columns: minmax(210px, 1fr) minmax(0, 2.5fr) minmax(210px, 1fr);
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 12px;
+    padding: 22px 35px;
+    background-color: #faf6ef;
+    border-bottom: 3px solid #b59a65;
+    font-family: "Lato", Arial, sans-serif;
+}
+.identita-biblioteca {
+    display: contents;
+}
+/* 2.2 STEMMA DEL COMUNE */
+.comune-biblioteca {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    text-align: left;
+}
+.logo-comune {
+    display: block;
+    width: 65px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.comune-biblioteca span {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.15;
+}
+/* 2.3 NOME DELLA BIBLIOTECA */
+.nome-biblioteca {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    text-align: center;
+}
+.intestazione-biblioteca .nome-biblioteca h1 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(34px, 3vw, 48px);
+    font-weight: 400;
+    line-height: 1.05;
+    margin: 0 0 4px;
+}
+.intestazione-biblioteca .nome-biblioteca h2 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(27px, 2.6vw, 39px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.1;
+    margin: 0;
+}
+/* 2.4 MENU SOTTO IL NOME DELLA BIBLIOTECA */
+.intestazione-biblioteca nav {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    width: 100%;
+}
+.intestazione-biblioteca nav a {
+    margin: 0;
+    padding: 6px 0;
+    color: #333333;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    white-space: nowrap;
+}
+.intestazione-biblioteca nav a:hover {
+    color: #711528;
+}
+.intestazione-biblioteca nav a.attivo {
+    color: #711528;
+    border-bottom: 2px solid #711528;
+}    
+/* 3. FOOTER */
+footer {
+    background-color: #f7f5f2;
+    color: #555555;
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+}
+/* 4. HOMEPAGE */
+.hero {
+    min-height: 75vh;
+    background-image: linear-gradient(
+        rgba(20, 12, 10, 0.30),
+        rgba(20, 12, 10, 0.30)
+    ), url("../immagini/biblioteca.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 65px 25px;
+    font-family: "Lato", Arial, sans-serif;
+}
+/* 4.1 RIQUADRO DI BENVENUTO */
+.hero-content {
+    background-color: rgba(250, 246, 239, 0.96);
+    padding: 55px 50px;
+    border-radius: 12px;
+    border-top: 4px solid #b59a65;
+    max-width: 780px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+/* 4.2 TITOLO DELLA HOMEPAGE */
+.hero-content h2 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.1;
+    margin: 0 0 25px;
+}
+/* 4.3 TESTO DI BENVENUTO */
+.hero-content p {
+    color: #443c38;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+/* 4.4 PULSANTE DEL CATALOGO */
+.btn {
+    display: inline-block;
+    background-color: #711528;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 7px;
+    border: 1px solid #711528;
+    font-size: 17px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #50101e;
+}
+/* 5. CATALOGO */
+.catalogo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 30px;
+    min-height: 65vh;
+    overflow-x: auto;
+    font-family: "Lato", Arial, sans-serif;
+}
+.catalogo h2 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.catalogo p {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+/* 5.1 INFORMAZIONI SUI PRESTITI */
+.informazioni-prestiti {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    box-shadow: none;
+}
+.informazioni-prestiti h3 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 10px;
+}
+.informazioni-prestiti p {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+/* 5.2 RICERCA NEL CATALOGO */
+#ricerca {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    padding: 14px 16px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    margin-bottom: 30px;
+    background-color: white;
+}
+#ricerca:focus {
+    outline: 2px solid #711528;
+    outline-offset: 1px;
+}
+/* 5.3 TABELLA DEL CATALOGO */
+.catalogo table {
+    width: 100%;
+    min-width: 1050px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.catalogo th {
+    background-color: #711528;
+    color: white;
+    padding: 16px 12px;
+    text-align: left;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    vertical-align: middle;
+}
+.catalogo td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #dddddd;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+.catalogo tbody tr:hover {
+    background-color: #f7eeee;
+}
+/* LARGHEZZA DELLE COLONNE */
+.catalogo th:nth-child(1),
+.catalogo td:nth-child(1) {
+    width: 23%;
+}
+.catalogo th:nth-child(2),
+.catalogo td:nth-child(2) {
+    width: 16%;
+}
+.catalogo th:nth-child(3),
+.catalogo td:nth-child(3) {
+    width: 15%;
+}
+.catalogo th:nth-child(4),
+.catalogo td:nth-child(4) {
+    width: 15%;
+}
+.catalogo th:nth-child(5),
+.catalogo td:nth-child(5) {
+    width: 16%;
+}
+.catalogo th:nth-child(6),
+.catalogo td:nth-child(6) {
+    width: 15%;
+}
+/* Mantine leggibili i titoli lunghi */
+.catalogo td:first-child {
+    font-weight: 500;
+    overflow-wrap: normal;
+}
+/* 5.4 PULSANTE RICHIESTA PRESTITO */
+.catalogo td button {
+    display: inline-block;
+    background-color: #711528;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 11px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.catalogo td button:hover:not(:disabled) {
+    background-color: #55101e;
+}
+.catalogo td button:disabled {
+    background-color: #b8a5a9;
+    cursor: not-allowed;
+}
+/* 6. REGISTRAZIONE E LOGIN */
+.pagina-registrazione {
+    width: 100%;
+    min-height: 70vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #faf6ef;
+    font-family: "Lato", Arial, sans-serif;
+}
+.modulo-registrazione {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: #faf6ef;
+    border: 1px solid #b59a65;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+.modulo-registrazione h2 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: center;
+    margin: 0 0 15px;
+}
+.modulo-registrazione p {
+    color: #252525;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 25px;
+}
+/* 6.1 CAMPI DEI MODULI */
+.modulo-registrazione form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.modulo-registrazione form label {
+    display: block;
+    color: #252525;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.modulo-registrazione form input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #cbbdae;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    background-color: #faf6ef;
+    color: #252525;
+}
+.modulo-registrazione form input:focus {
+    outline: 2px solid #711528;
+    outline-offset: 1px;
+}
+.modulo-registrazione form button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 5px;
+    background-color: #711528;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.modulo-registrazione form button:hover {
+    background-color: #55101e;
+}
+/* 6.2 COLLEGAMENTO TRA REGISTRAZIONE E LOGIN */
+.modulo-registrazione .link-accesso {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    text-align: center;
+    margin: 25px 0 0;
+}
+.modulo-registrazione .link-accesso a {
+    color: #711528;
+    font-weight: 700;
+}
+.modulo-registrazione .link-accesso a:hover {
+    color: #55101e;
+}
+/* 7. AREA PERSONALE DEL LETTORE */
+.area-lettore {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    min-height: 65vh;
+    font-family: "Lato", Arial, sans-serif;
+}
+/* 7.1 INTESTAZIONE DELL'AREA LETTORE */
+.intestazione-lettore {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.intestazione-lettore h2 {
+    margin: 0;
+}
+.benvenuto-lettore h2 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0;
+}
+.benvenuto-lettore > p {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+/* PROFILO DEL LETTORE */
+.profilo-lettore {
+    position: relative;
+}
+.utente-lettore {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    padding: 8px;
+    color: #711528;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.utente-lettore:hover {
+    color: #55101e;
+}
+.icona-utente {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+/* MENU DEL PROFILO */
+.menu-profilo {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 350px;
+    max-width: calc(100vw - 40px);
+    max-height: 75vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 24px;
+    background-color: #faf6ef;
+    border: 1px solid #b59a65;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+}
+.menu-profilo[hidden] {
+    display: none;
+}
+.menu-profilo p {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    overflow-wrap: anywhere;
+}
+.menu-profilo strong {
+    color: #711528;
+}
+/* 7.1.1 PULSANTI DEL MENU PERSONALE */
+
+.area-lettore .menu-profilo > button {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 11px 12px;
+    background-color: #711528;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    cursor: pointer;
+}
+.area-lettore .menu-profilo > button:hover {
+    background-color: #55101e;
+}
+.area-lettore .menu-profilo > button[hidden] {
+    display: none;
+}
+/* 7.1.2 MODULI DI MODIFICA DEL PROFILO E DELLA PASSWORD */
+.area-lettore #form-modifica-profilo,
+.area-lettore #form-modifica-password {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #b59a65;
+}
+.area-lettore #form-modifica-profilo[hidden],
+.area-lettore #form-modifica-password[hidden] {
+    display: none;
+}
+.area-lettore .menu-profilo form h3 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 18px;
+}
+.area-lettore .menu-profilo form label {
+    display: block;
+    color: #711528;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 7px;
+}
+.area-lettore .menu-profilo form input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    margin: 0 0 16px;
+    background-color: white;
+    color: #252525;
+    border: 1px solid #cbbdae;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 15px;
+}
+.area-lettore .menu-profilo form input:focus {
+    outline: 2px solid #b59a65;
+    outline-offset: 1px;
+    border-color: #711528;
+}
+.area-lettore .menu-profilo form button {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    margin-top: 10px;
+    background-color: #711528;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.area-lettore .menu-profilo form button:hover {
+    background-color: #55101e;
+}
+.area-lettore .menu-profilo form button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+.area-lettore #annulla-modifica-profilo,
+.area-lettore #annulla-modifica-password {
+    background-color: transparent;
+    color: #711528;
+    border: 1px solid #711528;
+}
+.area-lettore #annulla-modifica-profilo:hover,
+.area-lettore #annulla-modifica-password:hover {
+    background-color: #eee4d7;
+}
+/* 7.2 RIEPILOGO DEI PRESTITI DEL LETTORE */
+.riepilogo-lettore {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.scheda-riepilogo-lettore {
+    background-color: #faf6ef;
+    padding: 25px;
+    border: 1px solid #711528;
+    border-radius: 10px;
+    box-shadow: none;
+    text-align: center;
+}
+.scheda-riepilogo-lettore h3 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 15px;
+}
+.scheda-riepilogo-lettore p {
+    color: #252525;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+}
+/* 7.3 TABELLA DEI PRESTITI DEL LETTORE */
+.sezione-prestiti {
+    background-color: #faf6ef;
+    padding: 30px;
+    border: 1px solid #711528;
+    border-radius: 10px;
+    box-shadow: none;
+}
+.sezione-prestiti h3 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.sezione-prestiti table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: transparent;
+}
+.sezione-prestiti th {
+    background-color: #711528;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+.sezione-prestiti td {
+    padding: 15px;
+    border-bottom: 1px solid #cbbdae;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+/* 7.4 PULSANTE DEL CATALOGO */
+.pulsante-catalogo {
+    display: inline-block;
+    background-color: #711528;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+.pulsante-catalogo:hover {
+    background-color: #55101e;
+}
+/* 8. DASHBOARD DEL BIBLIOTECARIO */
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    min-height: 65vh;
+    font-family: "Lato", Arial, sans-serif;
+}
+/* 8.1 INTESTAZIONE DELLA DASHBOARD */
+.intestazione-dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.intestazione-dashboard h2 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0;
+}
+#nome-utente {
+    color: #711528;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+/* 8.1.1 PROFILO DEL BIBLIOTECARIO */
+.profilo-dashboard {
+    position: relative;
+}
+.utente-dashboard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: none;
+    border: none;
+    color: #711528;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.utente-dashboard:hover {
+    color: #55101e;
+}
+.utente-dashboard .icona-utente {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+/* 8.1.2 MENU PERSONALE DEL BIBLIOTECARIO */
+.profilo-dashboard .menu-profilo {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 350px;
+    max-width: calc(100vw - 40px);
+    max-height: 75vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 24px;
+    background-color: #faf6ef;
+    border: 1px solid #b59a65;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+}
+.profilo-dashboard .menu-profilo[hidden] {
+    display: none;
+}
+.profilo-dashboard .menu-profilo p {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    overflow-wrap: anywhere;
+}
+.profilo-dashboard .menu-profilo strong {
+    color: #711528;
+}
+/* 8.1.3 PULSANTI DEL MENU PERSONALE */
+.dashboard .menu-profilo > button,
+.menu-profilo > #pulsante-esci {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 11px 12px;
+    background-color: #711528;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    cursor: pointer;
+}
+.dashboard .menu-profilo > button:hover,
+.menu-profilo > #pulsante-esci:hover {
+    background-color: #55101e;
+}
+.dashboard .menu-profilo > button[hidden] {
+    display: none;
+}
+/* 8.1.4 MODULI DI MODIFICA DEL PROFILO E DELLA PASSWORD */
+.dashboard #form-modifica-profilo,
+.dashboard #form-modifica-password {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #b59a65;
+}
+.dashboard #form-modifica-profilo[hidden],
+.dashboard #form-modifica-password[hidden] {
+    display: none;
+}
+.dashboard .menu-profilo form h3 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 18px;
+}
+.dashboard .menu-profilo form label {
+    display: block;
+    color: #711528;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 7px;
+}
+.dashboard .menu-profilo form input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    margin: 0 0 16px;
+    background-color: white;
+    color: #252525;
+    border: 1px solid #cbbdae;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 15px;
+}
+.dashboard .menu-profilo form input:focus {
+    outline: 2px solid #b59a65;
+    outline-offset: 1px;
+    border-color: #711528;
+}
+.dashboard .menu-profilo form button {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    margin-top: 10px;
+    background-color: #711528;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.dashboard .menu-profilo form button:hover {
+    background-color: #55101e;
+}
+.dashboard .menu-profilo form button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+.dashboard #annulla-modifica-profilo,
+.dashboard #annulla-modifica-password {
+    background-color: transparent;
+    color: #711528;
+    border: 1px solid #711528;
+}
+.dashboard #annulla-modifica-profilo:hover,
+.dashboard #annulla-modifica-password:hover {
+    background-color: #eee4d7;
+}
+/* 8.1.5 DESCRIZIONE DELLA DASHBOARD */
+.dashboard > p {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+/* 8.3 FUNZIONI DEL BIBLIOTECARIO */
+.dashboard > h3 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+.funzioni-dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.scheda-funzione {
+    background-color: #faf6ef;
+    padding: 25px;
+    border: 1px solid #711528;
+    border-radius: 10px;
+    box-shadow: none;
+}
+.scheda-funzione h4 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 12px;
+}
+.scheda-funzione p {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 0;
+}
+/* 8.4 PULSANTI DELLA DASHBOARD */
+.pulsante-gestione {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 11px 18px;
+    background-color: #711528;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+.pulsante-gestione:hover {
+    background-color: #55101e;
+}
+/* 9. PAGINE DI GESTIONE DEL BIBLIOTECARIO */
+.gestione-libri {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    min-height: 65vh;
+    font-family: "Lato", Arial, sans-serif;
+}
+.gestione-libri h2 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.gestione-libri > p {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+/* 9.1 RIQUADRI DELLE PAGINE DI GESTIONE */
+.sezione-gestione {
+    background-color: #faf6ef;
+    padding: 30px;
+    border: 1px solid #711528;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: none;
+}
+.sezione-gestione h3 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+/* 9.2 MODULO DI GESTIONE LIBRI */
+#form-libro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+        "etichetta-isbn etichetta-titolo"
+        "campo-isbn campo-titolo"
+        "etichetta-autore etichetta-anno"
+        "campo-autore campo-anno"
+        "etichetta-genere etichetta-editore"
+        "campo-genere campo-editore"
+        "pulsante pulsante";
+    column-gap: 24px;
+    row-gap: 8px;
+    align-items: center;
+}
+#form-libro input[type="hidden"] {
+    display: none;
+}
+/* Posizione delle etichette */
+#form-libro label[for="isbn"] {
+    grid-area: etichetta-isbn;
+}
+#form-libro label[for="titolo"] {
+    grid-area: etichetta-titolo;
+}
+#form-libro label[for="autore"] {
+    grid-area: etichetta-autore;
+}
+#form-libro label[for="anno"] {
+    grid-area: etichetta-anno;
+}
+#form-libro label[for="genere"] {
+    grid-area: etichetta-genere;
+}
+#form-libro label[for="editore"] {
+    grid-area: etichetta-editore;
+}
+/* Posizione dei campi */
+#form-libro #isbn {
+    grid-area: campo-isbn;
+}
+#form-libro #titolo {
+    grid-area: campo-titolo;
+}
+#form-libro #autore {
+    grid-area: campo-autore;
+}
+#form-libro #anno {
+    grid-area: campo-anno;
+}
+#form-libro #genere {
+    grid-area: campo-genere;
+}
+#form-libro #editore {
+    grid-area: campo-editore;
+}
+/* Stile delle etichette */
+#form-libro label {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 12px;
+}
+/* Stile dei campi */
+#form-libro input:not([type="hidden"]),
+#form-libro select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid #cbbdae;
+    border-radius: 6px;
+    background-color: #faf6ef;
+    color: #252525;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+}
+#form-libro input:focus,
+#form-libro select:focus {
+    outline: 2px solid #711528;
+    outline-offset: 1px;
+}
+/* Pulsante aggiungi e salva modifiche */
+#form-libro button {
+    grid-area: pulsante;
+    justify-self: end;
+    width: auto;
+    min-width: 170px;
+    background-color: #711528;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    margin-top: 18px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#form-libro button:hover {
+    background-color: #55101e;
+}
+/* 9.3 MODULO DI GESTIONE COPIE */
+#form-copia {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px 20px;
+    align-items: center;
+}
+#form-copia label {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+}
+#form-copia select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cbbdae;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    background-color: #faf6ef;
+}
+#form-copia select:focus {
+    outline: 2px solid #711528;
+    outline-offset: 1px;
+}
+#form-copia button {
+    grid-column: 1 / -1;
+    background-color: #711528;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#form-copia button:hover {
+    background-color: #55101e;
+}
+/* 9.4 RICERCA DEI LIBRI, DELLE COPIE E DEI PRESTITI */
+#ricerca-libri,
+#ricerca-copie,
+#ricerca-prestiti,
+#ricerca-storico {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    margin-bottom: 25px;
+    border: 1px solid #cbbdae;
+    border-radius: 7px;
+    background-color: #faf6ef;
+    color: #252525;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+}
+#ricerca-libri:focus,
+#ricerca-copie:focus,
+#ricerca-prestiti:focus,
+#ricerca-storico:focus {
+    outline: 2px solid #711528;
+    outline-offset: 1px;
+}
+#nessun-libro,
+#nessuna-copia {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 17px;
+    margin-top: 15px;
+}
+/* 9.5 TABELLE DELLE PAGINE DI GESTIONE */
+.tabella-gestione {
+    width: 100%;
+    overflow-x: auto;
+}
+.tabella-gestione table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tabella-gestione th {
+    background-color: #711528;
+    color: white;
+    padding: 14px;
+    text-align: left;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+.tabella-gestione td {
+    padding: 14px;
+    border-bottom: 1px solid #cbbdae;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.tabella-gestione tbody tr:hover {
+    background-color: #f2e9df;
+}
+/* LARGHEZZA DELLA TABELLA GESTIONE COPIE */
+.gestione-libri:has(#elenco-copie) .tabella-gestione table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+}
+.gestione-libri:has(#elenco-copie) .tabella-gestione th:nth-child(1) {
+    width: 20%;
+}
+.gestione-libri:has(#elenco-copie) .tabella-gestione th:nth-child(2) {
+    width: 14%;
+}
+.gestione-libri:has(#elenco-copie) .tabella-gestione th:nth-child(3) {
+    width: 15%;
+}
+.gestione-libri:has(#elenco-copie) .tabella-gestione th:nth-child(4) {
+    width: 11%;
+}
+.gestione-libri:has(#elenco-copie) .tabella-gestione th:nth-child(5) {
+    width: 13%;
+}
+.gestione-libri:has(#elenco-copie) .tabella-gestione th:nth-child(6) {
+    width: 17%;
+}
+.gestione-libri:has(#elenco-copie) .tabella-gestione th:nth-child(7) {
+    width: 10%;
+}
+.gestione-libri:has(#elenco-copie) .tabella-gestione th,
+.gestione-libri:has(#elenco-copie) .tabella-gestione td {
+    padding: 10px 8px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+.gestione-libri:has(#elenco-copie) .tabella-gestione td button {
+    max-width: 100%;
+    padding: 9px 7px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+/* 9.6 PULSANTI DELLE TABELLE DI GESTIONE */
+.tabella-gestione td button {
+    background-color: #711528;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+.tabella-gestione td button:hover:not(:disabled) {
+    background-color: #55101e;
+}
+.tabella-gestione td button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* 9.7 ASPETTO SPECIFICO DI GESTIONE LIBRI */
+.gestione-libri:has(#elenco-gestione-libri) {
+    max-width: 1450px;
+}
+/* La tabella mantiene leggibili i dati bibliografici */
+.gestione-libri:has(#elenco-gestione-libri) .tabella-gestione table {
+    min-width: 1170px;
+}
+.gestione-libri:has(#elenco-gestione-libri) .tabella-gestione th,
+.gestione-libri:has(#elenco-gestione-libri) .tabella-gestione td {
+    padding: 12px 10px;
+    font-size: 14px;
+}
+.gestione-libri:has(#elenco-gestione-libri) .tabella-gestione th:nth-child(3),
+.gestione-libri:has(#elenco-gestione-libri) .tabella-gestione td:nth-child(3) {
+    white-space: nowrap;
+}
+.tabella-gestione td.azioni-libro {
+    min-width: 275px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.tabella-gestione .azioni-libro button {
+    display: inline-block;
+    width: auto;
+    margin: 0 5px 0 0;
+    padding: 10px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+.tabella-gestione .azioni-libro button:last-child {
+    margin-right: 0;
+}
+/* 9.8 RIEPILOGO DEI PRESTITI DEL BIBLIOTECARIO */
+.riepilogo-prestiti-gestione {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.scheda-riepilogo-prestiti {
+    width: 100%;
+    max-width: 450px;
+    background-color: #faf6ef;
+    padding: 25px;
+    border: 1px solid #711528;
+    border-radius: 10px;
+    box-shadow: none;
+    text-align: center;
+}
+.scheda-riepilogo-prestiti h3 {
+    color: #711528;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 15px;
+}
+.scheda-riepilogo-prestiti p {
+    color: #252525;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+}

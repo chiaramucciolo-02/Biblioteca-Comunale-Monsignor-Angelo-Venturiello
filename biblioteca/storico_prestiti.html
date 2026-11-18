@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storico prestiti - Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/storico_prestiti.js" defer></script>
+</head>
+<body>
+    <header class="intestazione-biblioteca">
+        <div class="identita-biblioteca">
+            <!-- LOGO DEL COMUNE DI CASTEL SAN LORENZO -->
+            <div class="comune-biblioteca">
+                <img src="immagini/logo_comune.png" class="logo-comune">
+                <span>
+                    Comune di<br>
+                    Castel San Lorenzo
+                </span>
+            </div>
+            <div class="nome-biblioteca">
+                <h1>Biblioteca Comunale</h1>
+                <h2>Monsignor Angelo Venturiello</h2>
+            </div>
+        </div>
+        <!-- MENU DI NAVIGAZIONE -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogo.html">Catalogo</a>
+            <a href="dashboard.html">Area bibliotecario</a>
+        </nav>
+    </header>
+    <main class="gestione-libri">
+        <div class="intestazione-dashboard">
+            <h2>Storico prestiti</h2>
+            <div class="profilo-dashboard">
+                <button type="button" id="pulsante-profilo-dashboard" class="utente-dashboard">
+                    <img src="immagini/icona.png" class="icona-utente">
+                    <span id="nome-utente"></span>
+                </button>
+                <!-- INFORMAZIONI PERSONALI -->
+                <div id="menu-profilo-dashboard" class="menu-profilo" hidden>
+                    <p><strong>Nome:</strong>
+                        <span id="profilo-nome"></span>
+                    </p>
+                    <p>
+                        <strong>Cognome:</strong>
+                        <span id="profilo-cognome"></span>
+                    </p>
+                    <p>
+                        <strong>Email:</strong>
+                        <span id="profilo-email"></span>
+                    </p>
+                    <button type="button" id="pulsante-esci"> Esci</button>
+                </div>
+            </div>
+        </div>
+        <p>Consulta i prestiti conclusi, controlla le date di scadenza e verifica quando sono stati restituiti.</p>
+        <!-- RIEPILOGO DEI PRESTITI CONCLUSI -->
+        <section class="riepilogo-prestiti-gestione" aria-label="Riepilogo dei prestiti conclusi">
+            <div class="scheda-riepilogo-prestiti">
+                <h3>Totale prestiti conclusi</h3>
+                <p id="totale-prestiti-conclusi">—</p>
+            </div>
+        </section>
+        <!-- ELENCO DEI PRESTITI RESTITUITI -->
+        <section class="sezione-gestione">
+            <h3>Prestiti restituiti</h3>
+            <input type="search" id="ricerca-storico" placeholder="Cerca per titolo, autore, lettore o data..."
+                label="Cerca nello storico per titolo, autore, lettore o data">
+            <div class="tabella-gestione">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lettore</th>
+                            <th>Titolo</th>
+                            <th>Autore</th>
+                            <th>Data prestito</th>
+                            <th>Data scadenza</th>
+                            <th>Data restituzione</th>
+                        </tr>
+                    </thead>
+                    <tbody id="elenco-prestiti-restituiti">
+                        <tr>
+                            <td colspan="6">
+                                Caricamento dello storico dei prestiti...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Biblioteca Comunale Monsignor Angelo Venturiello © 2026</p>
+        <p>Progetto sviluppato da Chiara Mucciolo</p>
+    </footer>
+</body>
+</html>

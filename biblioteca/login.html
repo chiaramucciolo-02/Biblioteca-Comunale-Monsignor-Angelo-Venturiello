@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accedi - Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="intestazione-biblioteca">
+        <div class="identita-biblioteca">
+            <!-- LOGO DEL COMUNE DI CASTEL SAN LORENZO -->
+            <div class="comune-biblioteca">
+                <img src="immagini/logo_comune.png" class="logo-comune">
+                <span>
+                    Comune di<br>
+                    Castel San Lorenzo
+                </span>
+            </div>
+            <div class="nome-biblioteca">
+                <h1>Biblioteca Comunale</h1>
+                <h2>Monsignor Angelo Venturiello</h2>
+            </div>
+        </div>
+        <!-- MENU' DI NAVIGAZIONE -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogo.html">Catalogo</a>
+            <a href="login.html" class="attivo">Accedi</a>
+        </nav>
+    </header>
+    <main class="pagina-registrazione">
+        <section class="modulo-registrazione">
+            <h2>Accedi al tuo account</h2>
+            <p>Inserisci le tue credenziali per accedere.</p>
+            <form id="form-login">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Accedi</button>
+            </form>
+            <p class="link-accesso">Non hai ancora un account?
+                <a href="registrazione.html">Registrati</a>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>Biblioteca Comunale Monsignor Angelo Venturiello © 2026</p>
+        <p>Progetto sviluppato da Chiara Mucciolo</p>
+    </footer>
+    <script src="js/login.js"></script>
+</body>
+</html>

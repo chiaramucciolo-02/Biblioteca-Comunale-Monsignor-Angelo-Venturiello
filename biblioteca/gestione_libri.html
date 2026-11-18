@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione libri - Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="intestazione-biblioteca">
+        <div class="identita-biblioteca">
+            <!--LOGO DEL COMUNE DI CASTEL SAN LORENZO-->
+            <div class="comune-biblioteca">
+                <img src="immagini/logo_comune.png" class="logo-comune">
+                <span>
+                    Comune di<br>
+                    Castel San Lorenzo
+                </span>
+            </div>
+            <div class="nome-biblioteca">
+                <h1>Biblioteca Comunale</h1>
+                <h2>Monsignor Angelo Venturiello</h2>
+            </div>
+        </div>
+        <!-- MENU DI NAVIGAZIONE -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogo.html">Catalogo</a>
+            <a href="dashboard.html">Area bibliotecario</a>
+        </nav>
+    </header>
+    <main class="gestione-libri">
+        <div class="intestazione-dashboard">
+            <h2>Gestione libri</h2>
+            <div class="profilo-dashboard">
+                <button type="button" id="pulsante-profilo-dashboard" class="utente-dashboard">
+                    <img src="immagini/icona.png" class="icona-utente">
+                    <span id="nome-utente"></span>
+                </button>
+                <!-- INFORMAZIONI PERSONALI -->
+                <div id="menu-profilo-dashboard" class="menu-profilo" hidden>
+                    <p><strong>Nome:</strong>
+                        <span id="profilo-nome"></span>
+                    </p>
+                    <p><strong>Cognome:</strong>
+                        <span id="profilo-cognome"></span>
+                    </p>
+                    <p><strong>Email:</strong>
+                        <span id="profilo-email"></span>
+                    </p>
+                    <button type="button" id="pulsante-esci">
+                        Esci
+                    </button>
+                </div>
+            </div>
+        </div>
+        <p>Da questa pagina puoi aggiungere, modificare ed eliminare i libri, oppure gestirne la visibilità nel catalogo pubblico.</p>
+        <!-- AGGIUNTA E MODIFICA DEI LIBRI -->
+        <section class="sezione-gestione">
+            <h3 id="titolo-form-libro">Aggiungi un libro</h3>
+            <form id="form-libro">
+                <input type="hidden" id="id_libro" name="id_libro">
+                <label for="isbn">ISBN</label>
+                <input type="text" id="isbn" name="isbn" maxlength="13" required>
+                <label for="titolo">Titolo</label>
+                <input type="text" id="titolo" name="titolo" required>
+                <label for="autore">Autore</label>
+                <input type="text" id="autore" name="autore" required>
+                <label for="anno">Anno di pubblicazione</label>
+                <label for="anno">Anno di pubblicazione</label>
+                <input type="number" id="anno" name="anno_pubblicazione" min="1000" max="2026" required>
+                <label for="genere">Genere</label>
+                <select id="genere" name="genere" required>
+                    <option value="">Seleziona un genere...</option>
+                    <option value="Drammatico">Drammatico</option>
+                    <option value="Fantascienza">Fantascienza</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Formazione">Formazione</option>
+                    <option value="Giallo">Giallo</option>
+                    <option value="Giallo poliziesco">Giallo poliziesco</option>
+                    <option value="Giallo storico">Giallo storico</option>
+                    <option value="Mistero">Mistero</option>
+                    <option value="Narrativa">Narrativa</option>
+                    <option value="Poesia">Poesia</option>
+                    <option value="Psicologico">Psicologico</option>
+                    <option value="Romanzo autobiografico">Romanzo autobiografico</option>
+                    <option value="Romanzo classico">Romanzo classico</option>
+                    <option value="Romanzo fantastico">Romanzo fantastico</option>
+                    <option value="Romanzo filosofico">Romanzo filosofico</option>
+                    <option value="Romanzo rosa">Romanzo rosa</option>
+                    <option value="Romanzo sentimentale">Romanzo sentimentale</option>
+                    <option value="Romanzo storico">Romanzo storico</option>
+                </select>
+                <label for="editore">Editore</label>
+                <input type="text" id="editore" name="editore" required>
+                <button type="submit" id="salva-libro"> Aggiungi libro</button>
+            </form>
+        </section>
+        <section class="sezione-gestione">
+            <h3>Libri presenti in biblioteca</h3>
+            <!-- RICERCA PER TITOLO O AUTORE -->
+            <input type="search" id="ricerca-libri" placeholder="Cerca per titolo o autore..."
+                aria-label="Cerca libri per titolo o autore">
+            <div class="tabella-gestione">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titolo</th>
+                            <th>Autore</th>
+                            <th>ISBN</th>
+                            <th>Editore</th>
+                            <th>Anno di pubblicazione</th>
+                            <th>Genere</th>
+                            <th>Stato</th>
+                            <th>Azioni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="elenco-gestione-libri">
+                        <tr>
+                            <td colspan="8">
+                                I libri saranno caricati dal database.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="nessun-libro" style="display: none;">Nessun libro trovato.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Biblioteca Comunale Monsignor Angelo Venturiello © 2026</p>
+        <p>Progetto sviluppato da Chiara Mucciolo</p>
+    </footer>
+    <script src="js/gestione_libri.js"></script>
+</body>
+</html>

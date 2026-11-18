@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo - Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="intestazione-biblioteca">
+        <div class="identita-biblioteca">
+            <!-- LOGO DEL COMUNE DI CASTEL SAN LORENZO -->
+            <div class="comune-biblioteca">
+                <img src="immagini/logo_comune.png" class="logo-comune">
+                <span>
+                    Comune di<br>
+                    Castel San Lorenzo
+                </span>
+            </div>
+            <div class="nome-biblioteca">
+                <h1>Biblioteca Comunale</h1>
+                <h2>Monsignor Angelo Venturiello</h2>
+            </div>
+        </div>
+        <!-- MENU' DI NAVIGAZIONE -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogo.html" class="attivo">Catalogo</a>
+            <a href="login.html" id="collegamento-area">Accedi</a>
+        </nav>
+    </header>
+    <main class="catalogo">
+        <h2>Catalogo dei libri</h2>
+        <p>Consulta il catalogo della biblioteca, cerca i libri di tuo interesse e richiedi un prestito.</p>
+        <div class="informazioni-prestiti">
+            <h3>Informazioni sui prestiti</h3>
+            <p>Ogni lettore può richiedere fino a 3 libri contemporaneamente. La durata di ogni prestito è di 30 giorni.</p>
+        </div>
+        <!-- CREAZIONE DELLA BARRA DI RICERCA DEI LIBRI -->
+        <input type="search" id="ricerca" placeholder="Cerca per titolo o autore...">
+        <table>
+            <thead>
+                <tr>
+                    <th>Titolo</th>
+                    <th>Autore</th>
+                    <th>Editore</th>
+                    <th>Genere</th>
+                    <th>Anno di pubblicazione</th>
+                    <th>Prestito</th>
+                </tr>
+            </thead>
+            <tbody id="elenco-libri"></tbody>
+        </table>
+        <p id="nessun-risultato" style="display: none;">Nessun libro trovato.</p>
+    </main>
+    <footer>
+        <p>Biblioteca Comunale Monsignor Angelo Venturiello © 2026</p>
+        <p>Progetto sviluppato da Chiara Mucciolo</p>
+    </footer>
+    <script src="js/catalogo.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area bibliotecario - Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/dashboard.js" defer></script>
+</head>
+
+<body>
+    <header class="intestazione-biblioteca">
+        <div class="identita-biblioteca">
+            <!-- LOGO DEL COMUNE DI CASTEL SAN LORENZO -->
+            <div class="comune-biblioteca">
+                <img src="immagini/logo_comune.png" class="logo-comune">
+                <span>
+                    Comune di<br>
+                    Castel San Lorenzo
+                </span>
+            </div>
+            <div class="nome-biblioteca">
+                <h1>Biblioteca Comunale</h1>
+                <h2>Monsignor Angelo Venturiello</h2>
+            </div>
+        </div>
+        <!-- MENU' DI NAVIGAZIONE -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogo.html">Catalogo</a>
+            <a href="dashboard.html" class="attivo">Area bibliotecario</a>
+        </nav>
+    </header>
+    <main class="dashboard">
+        <!-- DATI DEL BIBLIOTECARIO -->
+        <div class="intestazione-dashboard">
+            <h2>Area bibliotecario</h2>
+            <!--ANAGRAFICA DEL BIBLIOTECARIO -->
+            <div class="profilo-dashboard">
+                <button type="button" id="pulsante-profilo-dashboard" class="utente-dashboard">
+                    <img src="immagini/icona.png" class="icona-utente">
+                    <span id="nome-utente"></span>
+                </button>
+
+                <!-- MENU PERSONALE DEL BIBLIOTECARIO -->
+                <div id="menu-profilo-dashboard" class="menu-profilo" hidden>
+
+                    <p><strong>Nome:</strong>
+                        <span id="profilo-nome"></span>
+                    </p>
+
+                    <p><strong>Cognome:</strong>
+                        <span id="profilo-cognome"></span>
+                    </p>
+
+                    <p><strong>Email:</strong>
+                        <span id="profilo-email"></span>
+                    </p>
+
+                    <!-- MODIFICA DEL PROFILO -->
+                    <button type="button" id="modifica-profilo">
+                        Modifica profilo
+                    </button>
+
+                    <form id="form-modifica-profilo" hidden>
+                        <h3>Modifica profilo</h3>
+
+                        <label for="modifica-nome">Nome</label>
+                        <input type="text" id="modifica-nome" name="nome" required>
+
+                        <label for="modifica-cognome">Cognome</label>
+                        <input type="text" id="modifica-cognome" name="cognome" required>
+
+                        <label for="modifica-email">Email</label>
+                        <input type="email" id="modifica-email" name="email" required>
+
+                        <button type="submit">Salva modifiche</button>
+
+                        <button type="button" id="annulla-modifica-profilo">
+                            Annulla
+                        </button>
+                    </form>
+
+                    <!-- MODIFICA DELLA PASSWORD -->
+                    <button type="button" id="modifica-password">
+                        Modifica password
+                    </button>
+
+                    <form id="form-modifica-password" hidden>
+                        <h3>Modifica password</h3>
+
+                        <label for="password-attuale">Password attuale</label>
+                        <input type="password" id="password-attuale" name="password_attuale"
+                            autocomplete="current-password" required>
+
+                        <label for="password-nuova">Nuova password</label>
+                        <input type="password" id="password-nuova" name="password_nuova" autocomplete="new-password"
+                            minlength="8" required>
+
+                        <label for="conferma-password">Conferma nuova password</label>
+                        <input type="password" id="conferma-password" name="conferma_password"
+                            autocomplete="new-password" minlength="8" required>
+
+                        <button type="submit">Salva password</button>
+
+                        <button type="button" id="annulla-modifica-password">
+                            Annulla
+                        </button>
+                    </form>
+
+                    <!-- USCITA DALL'ACCOUNT -->
+                    <button type="button" id="pulsante-esci">
+                        Esci
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        <p>Da questa area puoi gestire i libri, le copie, i prestiti e le restituzioni della biblioteca.</p>
+        <!-- AZIONI CHE IL BIBLIOTECARIO PUO' FARE -->
+        <h3>Gestione biblioteca</h3>
+        <section class="funzioni-dashboard">
+            <div class="scheda-funzione">
+                <h4>Gestione libri</h4>
+                <p>Aggiungi, modifica ed elimina i libri e gestisci la visibilità nel catalogo.</p>
+                <a href="gestione_libri.html" class="pulsante-gestione">Gestisci libri</a>
+            </div>
+            <div class="scheda-funzione">
+                <h4>Gestione copie</h4>
+                <p>Aggiungi copie fisiche, modifica la disponibilità ed elimina le copie non utilizzate nei prestiti.
+                </p>
+                <a href="gestione_copie.html" class="pulsante-gestione">Gestisci copie</a>
+            </div>
+            <div class="scheda-funzione">
+                <h4>Prestiti attivi</h4>
+                <p>Consulta i prestiti in corso, controlla le scadenze e registra le restituzioni.</p>
+                <a href="prestiti_attivi.html" class="pulsante-gestione">Gestisci prestiti</a>
+            </div>
+            <div class="scheda-funzione">
+                <h4>Storico prestiti</h4>
+                <p>Consulta i prestiti conclusi e le relative date di restituzione.</p>
+                <a href="storico_prestiti.html" class="pulsante-gestione">Consulta storico</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Biblioteca Comunale Monsignor Angelo Venturiello © 2026</p>
+        <p>Progetto sviluppato da Chiara Mucciolo</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione copie - Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="intestazione-biblioteca">
+        <div class="identita-biblioteca">
+            <!-- LOGO DEL COMUNE DI CASTEL SAN LORENZO -->
+            <div class="comune-biblioteca">
+                <img src="immagini/logo_comune.png" class="logo-comune">
+                <span>
+                    Comune di<br>
+                    Castel San Lorenzo
+                </span>
+            </div>
+            <div class="nome-biblioteca">
+                <h1>Biblioteca Comunale</h1>
+                <h2>Monsignor Angelo Venturiello</h2>
+            </div>
+        </div>
+        <!-- MENU' DI NAVIGAZIONE -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogo.html">Catalogo</a>
+            <a href="dashboard.html">Area bibliotecario</a>
+        </nav>
+    </header>
+    <main class="gestione-libri">
+        <!-- GESTIONE COPIE BIBLIOTECARIO -->
+        <div class="intestazione-dashboard">
+            <h2>Gestione copie</h2>
+            <div class="profilo-dashboard">
+                <button type="button" id="pulsante-profilo-dashboard" class="utente-dashboard">
+                    <img src="immagini/icona.png" class="icona-utente">
+                    <span id="nome-utente"></span>
+                </button>
+                <div id="menu-profilo-dashboard" class="menu-profilo" hidden>
+                    <p><strong>Nome:</strong> 
+                        <span id="profilo-nome"></span>
+                    </p>
+                    <p><strong>Cognome:</strong> 
+                        <span id="profilo-cognome"></span>
+                    </p>
+                    <p><strong>Email:</strong>
+                        <span id="profilo-email"></span>
+                    </p>
+                    <button type="button" id="pulsante-esci">Esci</button>
+                </div>
+            </div>
+        </div>
+        <p>Da questa pagina puoi aggiungere nuove copie fisiche, modificarne la disponibilità ed eliminare quelle non associate a prestiti.</p>
+        <!-- AGGIUNGI UNA COPIA -->
+        <section class="sezione-gestione">
+            <h3>Aggiungi una copia</h3>
+            <form id="form-copia">
+                <label for="id_libro">Seleziona il libro</label>
+                <select id="id_libro" name="id_libro" required><option value="">Seleziona un libro...</option></select>
+                <button type="submit">Aggiungi copia</button>
+            </form>
+        </section>
+        <!-- ELENCO DELLE COPIE -->
+        <section class="sezione-gestione">
+            <h3>Copie presenti in biblioteca</h3>
+            <input type="search" id="ricerca-copie" placeholder="Cerca per titolo o autore..." label="Cerca copie per titolo o autore">
+            <div class="tabella-gestione">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titolo</th>
+                            <th>Autore</th>
+                            <th>Editore</th>
+                            <th>id copia</th>
+                            <th>Stato</th>
+                            <th>Modifica stato</th>
+                            <th>Elimina</th>
+                        </tr>
+                    </thead>
+                    <tbody id="elenco-copie">
+                        <tr>
+                            <td colspan="7">
+                                Le copie saranno caricate dal database.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="nessuna-copia" style="display: none;">Nessuna copia trovata.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Biblioteca Comunale Monsignor Angelo Venturiello © 2026</p>
+        <p>Progetto sviluppato da Chiara Mucciolo</p>
+    </footer>
+    <script src="js/gestione_copie.js"></script>
+</body>
+</html>

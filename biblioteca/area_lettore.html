@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area lettore - Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/area_lettore.js" defer></script>
+</head>
+<body>
+    <header class="intestazione-biblioteca">
+        <div class="identita-biblioteca">
+            <!-- LOGO DEL COMUNE DI CASTEL SAN LORENZO -->
+            <div class="comune-biblioteca">
+                <img src="immagini/logo_comune.png" class="logo-comune">
+                <span>
+                    Comune di<br>
+                    Castel San Lorenzo
+                </span>
+            </div>
+            <div class="nome-biblioteca">
+                <h1>Biblioteca Comunale</h1>
+                <h2>Monsignor Angelo Venturiello</h2>
+            </div>
+        </div>
+        <!-- MENU' DI NAVIGAZIONE -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogo.html">Catalogo</a>
+            <a href="area_lettore.html" class="attivo">Area lettore</a>
+        </nav>
+    </header>
+    <main class="area-lettore">
+        <section class="benvenuto-lettore">
+            <div class="intestazione-lettore">
+                <h2>La mia area personale</h2>
+                <div class="profilo-lettore">
+                    <button type="button" id="pulsante-profilo" class="utente-lettore">
+                        <img src="immagini/icona.png" class="icona-utente">
+                        <span id="nome-utente"></span>
+                    </button>
+                    <!--ANAGRAFICA DEL LETTORE-->
+                    <div id="menu-profilo" class="menu-profilo" hidden>
+                        <p><strong>Nome:</strong>
+                            <span id="profilo-nome"></span>
+                        </p>
+                        <p><strong>Cognome:</strong>
+                            <span id="profilo-cognome"></span>
+                        </p>
+                        <p><strong>Email:</strong>
+                            <span id="profilo-email"></span>
+                        </p>
+                        <!-- MODIFICA DELLE INFORMAZIONI PERSONALI -->
+                        <button type="button" id="modifica-profilo">Modifica profilo</button>
+                        <form id="form-modifica-profilo" hidden>
+                            <h3>Modifica profilo</h3>
+                            <label for="modifica-nome">Nome</label>
+                            <input type="text" id="modifica-nome" name="nome" required>
+                            <label for="modifica-cognome">Cognome</label>
+                            <input type="text" id="modifica-cognome" name="cognome" required>
+                            <label for="modifica-email">Email</label>
+                            <input type="email" id="modifica-email" name="email" required>
+                            <button type="submit">Salva modifiche</button>
+                            <button type="button" id="annulla-modifica-profilo">
+                                Annulla
+                            </button>
+                        </form>
+                        <!-- MODIFICA DELLA PASSWORD -->
+                        <button type="button" id="modifica-password">Modifica password</button>
+                        <form id="form-modifica-password" hidden>
+                            <h3>Modifica password</h3>
+                            <label for="password-attuale">Password attuale</label>
+                            <input type="password" id="password-attuale" name="password_attuale" required>
+                            <label for="password-nuova">Nuova password</label>
+                            <input type="password" id="password-nuova" name="password_nuova" minlength="8" required>
+                            <label for="conferma-password">Conferma nuova password</label>
+                            <input type="password" id="conferma-password" name="conferma_password" minlength="8" required>
+                            <button type="submit">Salva password</button>
+                            <button type="button" id="annulla-modifica-password">Annulla</button>
+                        </form>
+                        <button type="button" id="esci-profilo">Esci</button>
+                    </div>
+                </div>
+            </div>
+            <p>Da questa pagina puoi controllare i tuoi prestiti e le relative date di scadenza.</p>
+        </section>
+        <!-- RIEPILOGO DEI PRESTITI DEL LETTORE -->
+        <section class="riepilogo-lettore" label="Riepilogo dei miei prestiti">
+            <div class="scheda-riepilogo-lettore">
+                <h3>Prestiti attivi</h3>
+                <p id="totale-prestiti-attivi"></p>
+            </div>
+            <div class="scheda-riepilogo-lettore">
+                <h3>Prestiti conclusi</h3>
+                <p id="totale-prestiti-conclusi"></p>
+            </div>
+        </section>
+        <!-- ELENCO DEI PRESTITI DEL LETTORE -->
+        <section class="sezione-prestiti">
+            <h3>I miei prestiti</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Libro</th>
+                        <th>Data prestito</th>
+                        <th>Data scadenza</th>
+                        <th>Stato</th>
+                    </tr>
+                </thead>
+                <tbody id="elenco-prestiti">
+                    <tr>
+                        <td colspan="4">Caricamento dei prestiti...</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="catalogo.html" class="pulsante-catalogo">Vai al catalogo</a>
+        </section>
+    </main>
+    <footer>
+        <p>Biblioteca Comunale Monsignor Angelo Venturiello © 2026</p>
+        <p>Progetto sviluppato da Chiara Mucciolo</p>
+    </footer>
+</body>
+
+</html>
