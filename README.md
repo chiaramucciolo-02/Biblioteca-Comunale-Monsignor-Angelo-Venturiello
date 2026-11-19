@@ -5,10 +5,7 @@ L’obiettivo del progetto è stato quello di realizzare una piattaforma web per
 1. Scaricare il repository GitHub cliccando sul pulsante verde Code, poi su Download ZIP, ed estrarre il file scaricato.
 2. Installare XAMPP e copiare la cartella biblioteca all'interno della directory htdocs.
 3. Aprire il pannello di controllo di XAMPP e avviare Apache e MySQL (MariaDB).
-4. Durante lo sviluppo del progetto è stata utilizzata la porta 3307, poiché la porta predefinita 3306 risultava occupata. Il file connessione.php è quindi configurato per utilizzare la porta 3307. Sono possibili due opzioni: 
- 
- -PRIMA OPZIONE: se MariaDB utilizza la porta 3306, aprire il file connessione.php e sostituire il valore 3307 con 3306.
- -SECONDA OPZIONE: se si desidera utilizzare la porta 3307, arrestare MySQL, cliccare sul pulsante Config accanto a MySQL, aprire my.ini e impostare port=3307 nelle sezioni [client] e [mysqld]. Salvare e riavviare MySQL. Per consentire anche a phpMyAdmin di collegarsi, aprire il file config.inc.php e aggiungere nella configurazione del server la riga: $cfg['Servers'][$i]['port'] = '3307';
+4. Durante lo sviluppo del progetto è stata utilizzata la porta 3307, poiché la porta predefinita 3306 risultava occupata. Il file connessione.php è quindi configurato per utilizzare la porta 3307. Sono possibili due opzioni: con la prima opzione se MariaDB utilizza la porta 3306, aprire il file connessione.php e sostituire il valore 3307 con 3306. Con la seconda, invece, se si desidera utilizzare la porta 3307, arrestare MySQL, cliccare sul pulsante Config accanto a MySQL, aprire my.ini e impostare port=3307 nelle sezioni [client] e [mysqld]. Salvare e riavviare MySQL. Per consentire anche a phpMyAdmin di collegarsi, aprire il file config.inc.php e aggiungere nella configurazione del server la riga: $cfg['Servers'][$i]['port'] = '3307';
 5. Aprire phpMyAdmin all'indirizzo http://localhost/phpmyadmin/, creare un database vuoto denominato biblioteca, selezionarlo e importare il file biblioteca.sql.
 6. Verificare che i parametri di connessione al database nel file connessione.php corrispondano alla configurazione di MariaDB, in particolare la porta.
 7. Aprire il browser e accedere all'indirizzo http://localhost/biblioteca/.
